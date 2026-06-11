@@ -5,10 +5,8 @@ app = FastAPI()
 
 class CodeRequest(BaseModel):
     code:str
-
 @app.post("/review")
 def review_code(data:CodeRequest):
-
     return {
-        "received":data.code
+        "received":len(data.code)
     }
