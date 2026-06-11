@@ -1,6 +1,7 @@
 from fastapi import FastAPI
 from models import CodeInput
 from reviewer import get_review
+from fastapi.middleware.cors import CORSMiddleware
 
 app = FastAPI()
 
@@ -12,3 +13,11 @@ async def review(data: CodeInput):
     return {
         "review": result
     }
+
+app.add_middleware(
+    CORSMiddleware,
+    allow_origins=["*"],
+    allow_credentials=True,
+    allow_methods=["*"],
+    allow_headers=["*"]
+)
