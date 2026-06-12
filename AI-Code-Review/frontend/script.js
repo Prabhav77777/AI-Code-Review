@@ -1,8 +1,9 @@
 async function reviewCode(){
+    document.getElementById("loader").style.display = "block";
 
     const code =
     document.getElementById("codeInput").value;
-
+    
     const response =
     await fetch(
         "http://localhost:8000/review",
@@ -17,7 +18,9 @@ async function reviewCode(){
 
     const data =
     await response.json();
+    document.getElementById("loader").style.display = "none";
 
     document.getElementById("output")
         .innerText = data.review;
+
 }

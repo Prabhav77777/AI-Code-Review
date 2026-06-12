@@ -25,3 +25,16 @@ button{
     border-radius:10px;
     background:#f4f4f4;
 }
+body{
+    background:#121212;
+    color:white;
+}
+
+#codeInput{
+    background:#1e1e1e;
+    color:white;
+}
+
+#output{
+    background:#1e1e1e;
+}
