@@ -1,12 +1,23 @@
 from fastapi import FastAPI
-from pydantic import BaseModel
+from models import CodeInput
+from reviewer import get_review
+from fastapi.middleware.cors import CORSMiddleware
 
 app = FastAPI()
 
-class CodeRequest(BaseModel):
-    code:str
 @app.post("/review")
-def review_code(data:CodeRequest):
+async def review(data: CodeInput):
+
+    result = get_review(data.code)
+
     return {
-        "received":len(data.code)
+        "review": result
     }
+
+app.add_middleware(
+    CORSMiddleware,
+    allow_origins=["*"],
+    allow_credentials=True,
+    allow_methods=["*"],
+    allow_headers=["*"]
+)
