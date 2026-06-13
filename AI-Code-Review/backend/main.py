@@ -1,6 +1,6 @@
 from fastapi import FastAPI
-from models import CodeInput
-from reviewer import get_review
+from backend.models import CodeInput
+from backend.reviewer import get_review
 from fastapi.middleware.cors import CORSMiddleware
 
 app = FastAPI()
