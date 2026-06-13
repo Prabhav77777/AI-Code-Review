@@ -11,7 +11,7 @@ async function reviewCode() {
 
 
     const response = await fetch(
-        "http://localhost:8000/review",
+        "https://ai-code-review-u058.onrender.com",
         {
             method: "POST",
             headers: {
