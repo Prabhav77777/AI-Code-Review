@@ -7,12 +7,17 @@ app = FastAPI()
 
 @app.post("/review")
 async def review(data: CodeInput):
-
-    result = get_review(data.code)
-
     return {
-        "review": result
-    }
+    "score": 8,
+    "issues": [
+        "Missing comments"
+    ],
+    "suggestions": [
+        "Add comments"
+    ],
+    "optimized_code": data.code
+}
+   
 
 app.add_middleware(
     CORSMiddleware,
