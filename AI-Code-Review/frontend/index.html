@@ -3,24 +3,50 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>AI Code Review Assistant</title>
+
     <link rel="stylesheet" href="style.css">
-    <h1>AI Code Review Assistant</h1>
-<p>Paste your code and get instant feedback.</p>
-    <textarea id="codeInput"></textarea>
 
-<button onclick="reviewCode()">
-Review
-</button>
-<div id="loader" style="display:none;">
-    Reviewing your code...
-</div>
-
-<div id="output"></div>
-
-<script src="script.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/monaco-editor/0.52.2/min/vs/loader.min.js"></script>
 </head>
 <body>
-    
+
+
+    <div class="container">
+        <select id="language">
+    <option value="python">Python</option>
+    <option value="cpp">C++</option>
+    <option value="javascript">JavaScript</option>
+    <option value="java">Java</option>
+</select>
+
+        <h1>AI Code Review Assistant</h1>
+        <p>Paste your code and get instant feedback.</p>
+
+        <div class="main">
+            
+            <div id="editor"></div>
+
+            <div id="output">
+                <button id="copy" onclick="copyReview()">
+    Copy Review
+</button>
+                Review will appear here...
+            </div>
+
+        </div>
+
+        <button onclick="reviewCode()">
+            Review Code
+        </button>
+
+        <div id="loader">
+            Reviewing your code...
+        </div>
+
+    </div>
+
+    <script src="script.js"></script>
+
 </body>
 </html>
