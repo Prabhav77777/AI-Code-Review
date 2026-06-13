@@ -1,6 +1,7 @@
 from groq import Groq
 from dotenv import load_dotenv
 import os
+import json
 
 load_dotenv()
 
@@ -11,22 +12,25 @@ client = Groq(
 def get_review(code):
 
     prompt = f"""
-Review this code.
+You are an expert code reviewer.
 
-Return ONLY in this format:
+Analyze the code and return ONLY valid JSON.
 
-Code Quality Score: X/10
+Rules:
+- Return no explanation outside JSON.
+- score must be between 0 and 10.
+- issues must be a list of strings.
+- suggestions must be a list of strings.
+- optimized_code must contain improved code.
 
-Issues Found:
-- issue 1
-- issue 2
+JSON format:
 
-Suggestions:
-- suggestion 1
-- suggestion 2
-
-Optimized Code:
-<improved code>
+{{
+  "score": 0,
+  "issues": [],
+  "suggestions": [],
+  "optimized_code": ""
+}}
 
 Code:
 {code}
@@ -42,4 +46,14 @@ Code:
         ]
     )
 
-    return response.choices[0].message.content
+    review=response.choices[0].message.content
+    try:
+        return json.loads(review)
+
+    except:
+        return {
+        "score": 0,
+        "issues": ["AI parsing failed"],
+        "suggestions": [],
+        "optimized_code": code
+    }

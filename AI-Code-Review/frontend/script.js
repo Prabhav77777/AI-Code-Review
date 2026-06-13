@@ -22,20 +22,7 @@ async function reviewCode() {
             })
         }
     );
-
-    const data = {
-        score: 8,
-        issues: [
-            "Missing comments",
-            "Poor variable naming"
-        ],
-        suggestions: [
-            "Add comments",
-            "Use meaningful names"
-        ],
-        optimized_code: `def hello():
-    print("Hello")`
-    };
+    const data = await response.json();
     document.getElementById("loader").style.display = "none";
     document.getElementById("score").innerText =
         data.score + "/10";
