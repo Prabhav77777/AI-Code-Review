@@ -79,6 +79,7 @@ button{
     border:1px solid #333;
     border-radius:10px;
     padding:15px;
+    height: 92px;
 }
 
 .review-box h2{
@@ -89,4 +90,13 @@ button{
 #optimizedCode{
     white-space:pre-wrap;
     overflow-x:auto;
+}
+.score{
+    height: 30px;
+}
+.score h2{
+    margin-bottom: 0px;
+}
+.optimizedCode{
+    height: 155px;
 }
