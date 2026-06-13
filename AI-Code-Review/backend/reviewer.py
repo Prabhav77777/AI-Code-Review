@@ -13,14 +13,22 @@ def get_review(code):
     prompt = f"""
 Review this code.
 
-Check:
-1. Bugs
-2. Performance
-3. Security
-4. Best Practices
+Return ONLY in this format:
+
+Code Quality Score: X/10
+
+Issues Found:
+- issue 1
+- issue 2
+
+Suggestions:
+- suggestion 1
+- suggestion 2
+
+Optimized Code:
+<improved code>
 
 Code:
-
 {code}
 """
 
