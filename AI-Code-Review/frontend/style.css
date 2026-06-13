@@ -68,7 +68,7 @@ button{
     margin-top:15px;
     font-size:18px;
 }
-
+/* this is for responsive system on small screen devices */
 @media(max-width:900px){
     .main{
         flex-direction:column;
