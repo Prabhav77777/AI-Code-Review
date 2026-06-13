@@ -27,11 +27,18 @@ p{
     margin-bottom:20px;
 }
 
-#editor{
+#codeInput{
     flex:1;
     height:500px;
+    padding:20px;
+    font-size:16px;
+    font-family:Consolas, monospace;
+    border:none;
     border-radius:10px;
-    overflow:hidden;
+    resize:none;
+    outline:none;
+    background:#1e1e1e;
+    color:white;
 }
 
 #output{
@@ -61,15 +68,14 @@ button{
     margin-top:15px;
     font-size:18px;
 }
-#language{
-    display:none;
 
-    color: rgb(95, 136, 250);
-    background-color: #333;
-    border: 1px solid black;
-    border-radius: 7px;
-}
-#copy{
-    width:20px;
-    height:40px;
+@media(max-width:900px){
+    .main{
+        flex-direction:column;
+    }
+
+    #codeInput,
+    #output{
+        width:100%;
+    }
 }

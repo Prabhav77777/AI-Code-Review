@@ -6,31 +6,22 @@
     <title>AI Code Review Assistant</title>
 
     <link rel="stylesheet" href="style.css">
-
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/monaco-editor/0.52.2/min/vs/loader.min.js"></script>
 </head>
 <body>
 
-
     <div class="container">
-        <select id="language">
-    <option value="python">Python</option>
-    <option value="cpp">C++</option>
-    <option value="javascript">JavaScript</option>
-    <option value="java">Java</option>
-</select>
 
         <h1>AI Code Review Assistant</h1>
         <p>Paste your code and get instant feedback.</p>
 
         <div class="main">
-            
-            <div id="editor"></div>
+
+            <textarea
+                id="codeInput"
+                placeholder="Paste your code here..."
+            ></textarea>
 
             <div id="output">
-                <button id="copy" onclick="copyReview()">
-    Copy Review
-</button>
                 Review will appear here...
             </div>
 
