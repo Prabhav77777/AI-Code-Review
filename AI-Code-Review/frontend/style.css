@@ -40,6 +40,7 @@ p{
     background:#1e1e1e;
     color:white;
 }
+
 button{
     display:block;
     margin:auto;
@@ -56,17 +57,17 @@ button{
     margin-top:15px;
     font-size:18px;
 }
-/* this is for responsive system on small screen devices */
+
 @media(max-width:900px){
     .main{
         flex-direction:column;
     }
 
-    #codeInput,
-    #output{
+    #codeInput{
         width:100%;
     }
 }
+
 #reviewContainer{
     flex:1;
     display:flex;
@@ -74,36 +75,61 @@ button{
     gap:15px;
 }
 
+/* Common Box Style */
 .review-box{
     background:#1e1e1e;
     border:1px solid #333;
     border-radius:10px;
     padding:15px;
-    height: 92px;
 }
 
 .review-box h2{
     margin-top:0;
     font-size:18px;
 }
+
+/* Score Box */
 .score{
-    height: 30px;
+    height:70px;
 }
-.score h2{
-    margin-bottom: 0px;
+
+/* Issues Box */
+.issues{
+    height:150px;
+    overflow:hidden;
 }
+
+#issues{
+    height:100px;
+    overflow-y:auto;
+    margin:0;
+    padding-left:20px;
+}
+
+/* Suggestions Box */
+.suggestions{
+    height:150px;
+    overflow:hidden;
+}
+
+#suggestions{
+    height:100px;
+    overflow-y:auto;
+    margin:0;
+    padding-left:20px;
+}
+
+/* Optimized Code Box */
 .optimizedCode{
-    height: 300px;
-    display: flex;
-    flex-direction: column;
+    height:300px;
+    display:flex;
+    flex-direction:column;
 }
 
 #optimizedCode{
-    flex: 1;
-    overflow-y: auto;
-    overflow-x: auto;
-    white-space: pre;
-    margin: 0;
-    font-family: Consolas, monospace;
+    flex:1;
+    overflow:auto;
+    white-space:pre;
+    margin:0;
+    font-family:Consolas, monospace;
 }
-
