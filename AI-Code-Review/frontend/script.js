@@ -24,6 +24,9 @@ async function reviewCode() {
     );
     const data = await response.json();
     document.getElementById("loader").style.display = "none";
+    const data = await response.json();
+
+    console.log(data);
     document.getElementById("score").innerText =
         data.score + "/10";
 
