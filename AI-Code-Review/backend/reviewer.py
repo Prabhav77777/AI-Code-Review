@@ -16,8 +16,11 @@ You are an expert code reviewer.
 
 Analyze the code and return ONLY valid JSON.
 
-Rules:
-- Return no explanation outside JSON.
+IMPORTANT:
+- Do not use markdown.
+- Do not use ```json.
+- Do not include explanations.
+- Return exactly one JSON object.
 - score must be between 0 and 10.
 - issues must be a list of strings.
 - suggestions must be a list of strings.
@@ -36,24 +39,47 @@ Code:
 {code}
 """
 
-    response = client.chat.completions.create(
-        model="llama-3.3-70b-versatile",
-        messages=[
-            {
-                "role":"user",
-                "content":prompt
-            }
-        ]
-    )
-
-    review=response.choices[0].message.content
     try:
-        return json.loads(review)
+        response = client.chat.completions.create(
+            model="llama-3.3-70b-versatile",
+            messages=[
+                {
+                    "role": "user",
+                    "content": prompt
+                }
+            ]
+        )
 
-    except:
+        review = response.choices[0].message.content
+
+    except Exception as e:
+        print("Groq Error:", e)
+
         return {
-        "score": 0,
-        "issues": ["AI parsing failed"],
-        "suggestions": [],
-        "optimized_code": code
-    }
+            "score": 0,
+            "issues": ["AI service unavailable"],
+            "suggestions": ["Please try again later"],
+            "optimized_code": code
+        }
+
+    try:
+        start = review.find("{")
+        end = review.rfind("}") + 1
+
+        review_json = review[start:end]
+
+        return json.loads(review_json)
+
+    except Exception as e:
+        print("JSON Parse Error:", e)
+        print("Raw AI Response:")
+        print(review)
+
+        return {
+            "score": 0,
+            "issues": ["AI parsing failed"],
+            "suggestions": [
+                "Try submitting the code again"
+            ],
+            "optimized_code": code
+        }
