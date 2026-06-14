@@ -86,13 +86,6 @@ button{
     margin-top:0;
     font-size:18px;
 }
-
-#optimizedCode{
-    flex:1;
-    overflow: auto;
-    margin: 0;
-    white-space: pre;
-}
 .score{
     height: 30px;
 }
@@ -104,3 +97,13 @@ button{
     display: flex;
     flex-direction: column;
 }
+
+#optimizedCode{
+    flex: 1;
+    overflow-y: auto;
+    overflow-x: auto;
+    white-space: pre;
+    margin: 0;
+    font-family: Consolas, monospace;
+}
+
