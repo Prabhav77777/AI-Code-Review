@@ -88,9 +88,10 @@ button{
 }
 
 #optimizedCode{
-    margin: 0px;
+    flex:1;
+    overflow: auto;
+    margin: 0;
     white-space: pre;
-    font-family: Consolas,monospace;
 }
 .score{
     height: 30px;
@@ -100,5 +101,6 @@ button{
 }
 .optimizedCode{
     height: 300px;
-    overflow: auto;
+    display: flex;
+    flex-direction: column;
 }
