@@ -12,7 +12,7 @@ async function reviewCode() {
     try {
 
         const response = await fetch(
-            "https://ai-code-review-u058.onrender.com/review",
+            "https://ai-code-review-zzz1.onrender.com/review",
             {
                 method: "POST",
                 headers: {
