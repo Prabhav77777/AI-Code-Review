@@ -88,10 +88,9 @@ button{
 }
 
 #optimizedCode{
-    white-space:pre-wrap;
-    overflow-x:auto;
-    overflow-y:auto;
-    max-height: 100px;
+    margin: 0px;
+    white-space: pre;
+    font-family: Consolas,monospace;
 }
 .score{
     height: 30px;
@@ -100,5 +99,6 @@ button{
     margin-bottom: 0px;
 }
 .optimizedCode{
-    height: 155px;
+    height: 300px;
+    overflow: auto;
 }
