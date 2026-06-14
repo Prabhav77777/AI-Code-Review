@@ -1,7 +1,6 @@
 from groq import Groq
 from dotenv import load_dotenv
 import os
-import json
 
 load_dotenv()
 
@@ -14,26 +13,21 @@ def get_review(code):
     prompt = f"""
 You are an expert code reviewer.
 
-Analyze the code and return ONLY valid JSON.
+Return your response in EXACTLY this format:
 
-IMPORTANT:
-- Do not use markdown.
-- Do not use ```json.
-- Do not include explanations.
-- Return exactly one JSON object.
-- score must be between 0 and 10.
-- issues must be a list of strings.
-- suggestions must be a list of strings.
-- optimized_code must contain improved code.
+SCORE:
+<number>
 
-JSON format:
+ISSUES:
+- issue 1
+- issue 2
 
-{{
-  "score": 0,
-  "issues": [],
-  "suggestions": [],
-  "optimized_code": ""
-}}
+SUGGESTIONS:
+- suggestion 1
+- suggestion 2
+
+OPTIMIZED_CODE:
+<full optimized code>
 
 Code:
 {code}
@@ -52,6 +46,9 @@ Code:
 
         review = response.choices[0].message.content
 
+        print("AI RESPONSE:")
+        print(review)
+
     except Exception as e:
         print("Groq Error:", e)
 
@@ -63,20 +60,47 @@ Code:
         }
 
     try:
-        start = review.find("{")
-        end = review.rfind("}") + 1
 
-        review_json = review[start:end]
+        # SCORE
+        score_text = review.split("SCORE:")[1].split("ISSUES:")[0].strip()
+        score = int(score_text)
 
-        return json.loads(review_json)
+        # ISSUES
+        issues_text = review.split("ISSUES:")[1].split("SUGGESTIONS:")[0]
+
+        issues = [
+            line.replace("-", "").strip()
+            for line in issues_text.split("\n")
+            if line.strip().startswith("-")
+        ]
+
+        # SUGGESTIONS
+        suggestions_text = review.split("SUGGESTIONS:")[1].split("OPTIMIZED_CODE:")[0]
+
+        suggestions = [
+            line.replace("-", "").strip()
+            for line in suggestions_text.split("\n")
+            if line.strip().startswith("-")
+        ]
+
+        # OPTIMIZED CODE
+        optimized_code = review.split("OPTIMIZED_CODE:")[1].strip()
+
+        return {
+            "score": score,
+            "issues": issues,
+            "suggestions": suggestions,
+            "optimized_code": optimized_code
+        }
 
     except Exception as e:
+
+        print("Parsing Error:", e)
+        print(review)
+
         return {
             "score": 0,
-            "issues": [
-                "JSON Parse Error",
-                str(e)
-            ],
-            "suggestions": [],
+            "issues": ["Response parsing failed"],
+            "suggestions": ["Try again"],
             "optimized_code": review
         }
