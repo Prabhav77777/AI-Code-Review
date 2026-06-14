@@ -90,6 +90,8 @@ button{
 #optimizedCode{
     white-space:pre-wrap;
     overflow-x:auto;
+    overflow-y:auto;
+    max-height: 100px;
 }
 .score{
     height: 30px;
