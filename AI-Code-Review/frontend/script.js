@@ -71,6 +71,7 @@ async function reviewCode() {
     }
 
     document.getElementById("loader").style.display = "none";
+    document.getElementById("codeInput").style.border= "none";
 }
 
 function updateList(id, items) {

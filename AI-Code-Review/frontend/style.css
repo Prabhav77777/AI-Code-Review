@@ -1,8 +1,8 @@
 body{
     margin:0;
-    background:linear-gradient(to right,rgb(36, 36, 71),rgb(59, 21, 59));
-    color:white;
+    background:linear-gradient(to right,black,rgb(25, 25, 47),black);
     font-family:Arial, sans-serif;
+    color: rgb(222, 237, 249);
 }
 .container{
     width:95%;
@@ -31,11 +31,11 @@ p{
     padding:20px;
     font-size:16px;
     font-family:Consolas, monospace;
-    border:none;
+    border:2px solid white;
     border-radius:10px;
     resize:none;
     outline:none;
-    background:#1e1e1e;
+    background:#150c28;
     color:white;
 }
 
@@ -75,8 +75,7 @@ button{
 
 /* Common Box Style */
 .review-box{
-    background:#1e1e1e;
-    border:1px solid #333;
+    background-color: #150c28;
     border-radius:10px;
     padding:15px;
 }
@@ -84,11 +83,7 @@ button{
 .review-box h2{
     margin-top:0;
     font-size:18px;
-}
-
-/* Score Box */
-.score{
-    height:70px;
+    color:rgb(206, 208, 237);
 }
 
 /* Issues Box */
