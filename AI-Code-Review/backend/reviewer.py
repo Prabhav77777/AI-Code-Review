@@ -71,15 +71,12 @@ Code:
         return json.loads(review_json)
 
     except Exception as e:
-        print("JSON Parse Error:", e)
-        print("Raw AI Response:")
-        print(review)
-
         return {
             "score": 0,
-            "issues": ["AI parsing failed"],
-            "suggestions": [
-                "Try submitting the code again"
+            "issues": [
+                "JSON Parse Error",
+                str(e)
             ],
-            "optimized_code": code
+            "suggestions": [],
+            "optimized_code": review
         }
