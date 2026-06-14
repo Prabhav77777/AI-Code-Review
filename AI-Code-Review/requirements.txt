@@ -3,4 +3,3 @@ uvicorn
 groq
 python-dotenv
 pydantic
-json_repair
