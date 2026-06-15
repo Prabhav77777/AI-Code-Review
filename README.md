@@ -381,7 +381,7 @@ Have questions, feedback, or ideas? Feel free to reach out!
 
 - 📧 **Email:** prabhavagrawal2007@gmail.com
 - 💼 **LinkedIn:** [linkedin.com/in/prabhav-agrawal-479971378](https://linkedin.com)
-- 🐙 **GitHub:** [github.com/your-username](https://github.com)
+- 🐙 **GitHub:** [github.com/Prabhav77777](https://github.com)
 
 ---
 
