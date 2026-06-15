@@ -379,8 +379,8 @@ Feel free to use, modify, and distribute it as you see fit. See the [LICENSE](LI
 
 Have questions, feedback, or ideas? Feel free to reach out!
 
-- 📧 **Email:** your.email@example.com
-- 💼 **LinkedIn:** [linkedin.com/in/your-profile](https://linkedin.com)
+- 📧 **Email:** prabhavagrawal2007@gmail.com
+- 💼 **LinkedIn:** [linkedin.com/in/prabhav-agrawal-479971378](https://linkedin.com)
 - 🐙 **GitHub:** [github.com/your-username](https://github.com)
 
 ---
