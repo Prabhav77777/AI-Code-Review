@@ -32,9 +32,6 @@ async function reviewCode() {
 
         console.log("API Response:", data);
 
-        document.getElementById("score").innerText =
-            (data.score ?? 0) + "/10";
-
         updateList(
             "issues",
             data.issues || []
@@ -72,6 +69,10 @@ async function reviewCode() {
 
     document.getElementById("loader").style.display = "none";
     document.getElementById("codeInput").style.border= "none";
+    for(let i=0;i<3;i++){
+    document.getElementsByClassName("review-box")[i].style.border="2px solid white";
+
+    }
 }
 
 function updateList(id, items) {

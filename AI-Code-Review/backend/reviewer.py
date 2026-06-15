@@ -15,9 +15,6 @@ You are an expert code reviewer.
 
 Return your response in EXACTLY this format:
 
-SCORE:
-<number>
-
 ISSUES:
 - issue 1
 - issue 2
@@ -53,17 +50,12 @@ Code:
         print("Groq Error:", e)
 
         return {
-            "score": 0,
             "issues": ["AI service unavailable"],
             "suggestions": ["Please try again later"],
             "optimized_code": code
         }
 
     try:
-
-        # SCORE
-        score_text = review.split("SCORE:")[1].split("ISSUES:")[0].strip()
-        score = int(score_text)
 
         # ISSUES
         issues_text = review.split("ISSUES:")[1].split("SUGGESTIONS:")[0]
@@ -99,7 +91,6 @@ Code:
         print(review)
 
         return {
-            "score": 0,
             "issues": ["Response parsing failed"],
             "suggestions": ["Try again"],
             "optimized_code": review
