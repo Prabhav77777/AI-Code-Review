@@ -296,7 +296,8 @@ AI-Code-Review/
 
 <div align="center">
 
-<img width="1920" height="1080" alt="image" src="https://github.com/user-attachments/assets/a6c80256-30f1-40e3-94a7-38512d9331c7" />
+<img width="1920" height="1080" alt="image" src="https://github.com/user-attachments/assets/288d4567-2dc2-4f3f-be53-df4c45f961da" />
+
 
 
 `![Review Result](./screenshots/review-result.png)`
