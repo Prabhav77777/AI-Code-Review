@@ -79,7 +79,6 @@ Code:
         optimized_code = review.split("OPTIMIZED_CODE:")[1].strip()
 
         return {
-            "score": score,
             "issues": issues,
             "suggestions": suggestions,
             "optimized_code": optimized_code

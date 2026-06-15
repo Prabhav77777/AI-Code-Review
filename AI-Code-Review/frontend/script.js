@@ -50,9 +50,6 @@ async function reviewCode() {
 
         console.error(error);
 
-        document.getElementById("score").innerText =
-            "Error";
-
         updateList(
             "issues",
             ["Failed to get review"]

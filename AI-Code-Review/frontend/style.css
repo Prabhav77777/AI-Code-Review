@@ -87,29 +87,31 @@ p{
 
 /* Issues */
 .issues{
-    min-height:180px;
+    height:180px;
 }
 
 #issues{
     max-height:120px;
     overflow-y:auto;
+    overflow-x: hidden;
     padding-left:20px;
 }
 
 /* Suggestions */
 .suggestions{
-    min-height:180px;
+    height:180px;
 }
 
 #suggestions{
     max-height:120px;
+    overflow-x: hidden;
     overflow-y:auto;
     padding-left:20px;
 }
 
 /* Optimized Code */
 .optimizedCode{
-    min-height:300px;
+    height:300px;
     display:flex;
     flex-direction:column;
 }
