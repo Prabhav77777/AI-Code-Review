@@ -285,8 +285,8 @@ AI-Code-Review/
 ### 🏠 Home Page
 
 <div align="center">
+<img width="1920" height="1080" alt="image" src="https://github.com/user-attachments/assets/d5b5e765-f816-46d2-955d-91f1086d99e7" />
 
-*[Add a screenshot of the home page UI here]*
 
 `![Home Page](./screenshots/home-page.png)`
 
@@ -296,7 +296,8 @@ AI-Code-Review/
 
 <div align="center">
 
-*[Add a screenshot of the review results — issues, suggestions, and optimized code — here]*
+<img width="1920" height="1080" alt="image" src="https://github.com/user-attachments/assets/a6c80256-30f1-40e3-94a7-38512d9331c7" />
+
 
 `![Review Result](./screenshots/review-result.png)`
 
