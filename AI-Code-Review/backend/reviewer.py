@@ -26,6 +26,12 @@ SUGGESTIONS:
 OPTIMIZED_CODE:
 <full optimized code>
 
+For the optimized code section:
+- Return plain code only.
+- Do NOT use markdown.
+- Do NOT use code fences.
+- Do NOT use ```python or ```.
+
 Code:
 {code}
 """
