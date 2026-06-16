@@ -43,8 +43,9 @@ Code:
 
         review = response.choices[0].message.content
 
-        print("AI RESPONSE:")
-        print(review)
+        # print("AI RESPONSE:")
+        # print(review)
+        print("AI responded")
 
     except Exception as e:
         print("Groq Error:", e)
@@ -52,7 +53,7 @@ Code:
         return {
             "issues": ["AI service unavailable"],
             "suggestions": ["Please try again later"],
-            "optimized_code": code
+            "optimized_code": ["not available right now"],
         }
 
     try:
@@ -92,5 +93,5 @@ Code:
         return {
             "issues": ["Response parsing failed"],
             "suggestions": ["Try again"],
-            "optimized_code": review
+            "optimized_code": ["not available now please again"],
         }

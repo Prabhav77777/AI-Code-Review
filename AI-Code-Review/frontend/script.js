@@ -68,7 +68,6 @@ async function reviewCode() {
     document.getElementById("codeInput").style.border= "none";
     for(let i=0;i<3;i++){
     document.getElementsByClassName("review-box")[i].style.border="2px solid white";
-
     }
 }
 
