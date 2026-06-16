@@ -90,7 +90,7 @@ function copycode(){
     navigator.clipboard.writeText(code);
 
     const btn=document.getElementById("copy");
-    btn.textContent="Copied";
+    btn.textContent="copied";
 
     setTimeout(function(){
         btn.textContent="copy";

@@ -114,6 +114,7 @@ p{
     height:300px;
     display:flex;
     flex-direction:column;
+    margin-bottom: 15px;
 }
 
 #optimizedCode{
@@ -142,10 +143,13 @@ button{
     transition:0.3s;
 }
 
-button:hover{
+#review:hover{
     transform:scale(1.05);
 }
 
+#copy:hover{
+    background-color: rgb(129, 129, 129);
+}
 /* Loader */
 #loader{
     display:none;
@@ -169,4 +173,34 @@ button:hover{
     #codeInput{
         height:400px;
     }
+}
+
+#copy{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: xx-small;
+    width:40px;
+    height: 25px;
+
+    padding: 8px 15px;
+    border: 1px solid white;
+    border-radius: 5px;
+    background-color: #150c28;
+    color: white;
+    cursor: pointer;
+    margin: 0;
+}
+.optimizedheader{
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    width:100%;
+}
+.optimizedheader h2{
+    margin:0;
+}
+
+#copy{
+    margin:0;
 }
