@@ -74,7 +74,7 @@ p{
 /* Review Boxes */
 .review-box{
     background:#150c28;
-    border:2px solid white;
+    /* border:2px solid white; */
     border-radius:12px;
     padding:15px;
     color:white;
