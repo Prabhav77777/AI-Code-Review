@@ -84,3 +84,16 @@ function updateList(id, items) {
         .map(item => `<li>${item}</li>`)
         .join("");
 }
+function copycode(){
+    const code=document.getElementById("optimizedCode").textcontent;
+    
+    navigator.clipboard.writeText(code);
+
+    const btn=document.getElementById("copy");
+    btn.textContent="Copied";
+
+    setTimeout(function(){
+        btn.textContent="copy";
+
+    },2000);
+}
