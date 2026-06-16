@@ -85,7 +85,7 @@ function updateList(id, items) {
         .join("");
 }
 function copycode(){
-    const code=document.getElementById("optimizedCode").textcontent;
+    const code=document.getElementById("optimizedCode").innerText;
     
     navigator.clipboard.writeText(code);
 
