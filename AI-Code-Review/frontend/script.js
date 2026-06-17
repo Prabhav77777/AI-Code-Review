@@ -65,9 +65,9 @@ async function reviewCode() {
     }
 
     document.getElementById("loader").style.display = "none";
-    document.getElementById("codeInput").style.border= "none";
-    for(let i=0;i<3;i++){
-    document.getElementsByClassName("review-box")[i].style.border="2px solid white";
+    document.getElementById("codeInput").style.border = "none";
+    for (let i = 0; i < 3; i++) {
+        document.getElementsByClassName("review-box")[i].style.border = "2px solid white";
     }
 }
 
@@ -84,28 +84,28 @@ function updateList(id, items) {
         .map(item => `<li>${item}</li>`)
         .join("");
 }
-function copycode(){
-    const code=document.getElementById("optimizedCode").innerText;
-    
+function copycode() {
+    const code = document.getElementById("optimizedCode").innerText;
+
     navigator.clipboard.writeText(code);
 
-    const btn=document.getElementById("copy");
-    btn.textContent="copied";
+    const btn = document.getElementById("copy");
+    btn.textContent = "copied";
 
-    setTimeout(function(){
-        btn.textContent="copy";
+    setTimeout(function () {
+        btn.textContent = "copy";
 
-    },2000);
+    }, 2000);
 }
 const themeBtn = document.getElementById("themeToggle");
 
 themeBtn.addEventListener("click", () => {
     document.body.classList.toggle("lightmode");
 
-    if(document.body.classList.contains("lightmode")){
+    if (document.body.classList.contains("lightmode")) {
         themeBtn.textContent = "Dark Mode🌙";
     }
-    else{
+    else {
         themeBtn.textContent = "Light Mode☀️";
     }
 });
