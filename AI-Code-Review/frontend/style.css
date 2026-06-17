@@ -4,7 +4,15 @@
     padding:0;
     box-sizing:border-box;
 }
+:root{
+    --color:rgb(222, 237, 249);
+    --bg:linear-gradient(to right, black, rgb(25, 25, 47), black);
+    --w:white;
+    --b:black;
+    --bl:#150c28;
+    --buttonclick:rgb(129, 129, 129);
 
+}
 
 body{
     background:var(--bg);
