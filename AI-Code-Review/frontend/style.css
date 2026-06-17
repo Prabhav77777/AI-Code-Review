@@ -5,10 +5,11 @@
     box-sizing:border-box;
 }
 
+
 body{
-    background:linear-gradient(to right, black, rgb(25, 25, 47), black);
+    background:var(--bg);
     font-family:Arial, sans-serif;
-    color:rgb(222, 237, 249);
+    color:var(--color);
     overflow-x:hidden;
 }
 
@@ -51,11 +52,11 @@ p{
     font-size:16px;
     font-family:Consolas, monospace;
 
-    border:2px solid white;
+    border:2px solid var(--w);
     border-radius:12px;
 
-    background:#150c28;
-    color:white;
+    background:var(--bl);
+    color:var(--w);
 
     resize:none;
     outline:none;
@@ -73,16 +74,16 @@ p{
 
 /* Review Boxes */
 .review-box{
-    background:#150c28;
+    background:var(--bl);
     /* border:2px solid white; */
     border-radius:12px;
     padding:15px;
-    color:white;
+    color:var(--w);
 }
 
 .review-box h2{
     margin-bottom:12px;
-    color:rgb(206, 208, 237);
+    color:var(--color);
 }
 
 /* Issues */
@@ -148,7 +149,7 @@ button{
 }
 
 #copy:hover{
-    background-color: rgb(129, 129, 129);
+    background-color:var(--buttonclick);
 }
 /* Loader */
 #loader{
@@ -184,10 +185,10 @@ button{
     height: 25px;
 
     padding: 8px 15px;
-    border: 1px solid white;
+    border: 1px solid var(--w);
     border-radius: 5px;
-    background-color: #ffffff;
-    color: #150c28;
+    background-color: var(--w);
+    color:var(--bl);
     cursor: pointer;
     margin: 0;
 }
