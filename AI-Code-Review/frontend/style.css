@@ -12,6 +12,15 @@
     --bl:#150c28;
     --buttonclick:rgb(129, 129, 129);
 }
+.darkmode{
+    --color:rgb(255, 79, 79);
+    --bg:linear-gradient(to right, black, rgb(115, 35, 35), black);
+    --w:rgb(53, 9, 9);
+    --b:black;
+    --bl:#150c28;
+    --buttonclick:rgb(129, 129, 129);
+
+}
 body{
     background:var(--bg);
     font-family:Arial, sans-serif;
