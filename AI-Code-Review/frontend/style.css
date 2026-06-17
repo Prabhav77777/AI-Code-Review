@@ -11,36 +11,29 @@
     --b:black;
     --bl:#150c28;
     --buttonclick:rgb(129, 129, 129);
-
 }
-
 body{
     background:var(--bg);
     font-family:Arial, sans-serif;
     color:var(--color);
     overflow-x:hidden;
 }
-
 .container{
     width:95%;
     max-width:1400px;
     margin:auto;
     padding:20px;
 }
-
 h1{
     text-align:center;
     margin-bottom:20px;
     font-size:3rem;
 }
-
 p{
     text-align:center;
     margin-bottom:30px;
     font-size:1.2rem;
 }
-
-/* Main Layout */
 .main{
     display:flex;
     gap:20px;
@@ -48,7 +41,6 @@ p{
     margin-bottom:20px;
 }
 
-/* Code Input */
 #codeInput{
     flex:1;
     min-width:0;
@@ -69,8 +61,6 @@ p{
     resize:none;
     outline:none;
 }
-
-/* Review Section */
 #reviewContainer{
     flex:1;
     min-width:0;
@@ -80,10 +70,8 @@ p{
     gap:15px;
 }
 
-/* Review Boxes */
 .review-box{
     background:var(--bl);
-    /* border:2px solid white; */
     border-radius:12px;
     padding:15px;
     color:var(--w);
@@ -94,7 +82,6 @@ p{
     color:var(--color);
 }
 
-/* Issues */
 .issues{
     height:180px;
 }
@@ -106,7 +93,6 @@ p{
     padding-left:20px;
 }
 
-/* Suggestions */
 .suggestions{
     height:180px;
 }
@@ -118,7 +104,6 @@ p{
     padding-left:20px;
 }
 
-/* Optimized Code */
 .optimizedCode{
     height:300px;
     display:flex;
@@ -134,7 +119,6 @@ p{
     font-family:Consolas, monospace;
 }
 
-/* Button */
 button{
     display:block;
     margin:20px auto;
@@ -159,7 +143,6 @@ button{
 #copy:hover{
     background-color:var(--buttonclick);
 }
-/* Loader */
 #loader{
     display:none;
     text-align:center;
@@ -167,7 +150,6 @@ button{
     font-size:18px;
 }
 
-/* Responsive */
 @media (max-width:900px){
 
     .main{
