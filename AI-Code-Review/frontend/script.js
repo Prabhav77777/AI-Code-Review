@@ -97,3 +97,15 @@ function copycode(){
 
     },2000);
 }
+const themeBtn = document.getElementById("themeToggle");
+
+themeBtn.addEventListener("click", () => {
+    document.body.classList.toggle("lightmode");
+
+    if(document.body.classList.contains("lightmode")){
+        themeBtn.textContent = "Dark Mode🌙";
+    }
+    else{
+        themeBtn.textContent = "Light Mode☀️";
+    }
+});
