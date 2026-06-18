@@ -21,7 +21,7 @@
     --b: rgb(235, 246, 247);
     --bl: #66a9cf;
     --buttonclick: rgb(129, 129, 129);
-    --name: rgb(40, 40, 40);
+    --name: rgb(45, 45, 45);
 }
 
 body {
@@ -224,6 +224,6 @@ button {
 .footer{
     display: flex;
     justify-content: center;
-    color:var(name);
+    color:var(--name);
     font: bold;
 }
