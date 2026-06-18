@@ -224,6 +224,6 @@ button {
 .footer{
     display: flex;
     justify-content: center;
-    color:;
+    color:var(name);
     font: bold;
 }
