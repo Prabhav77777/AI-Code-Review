@@ -11,6 +11,7 @@
     --b: black;
     --bl: #150c28;
     --buttonclick: rgb(129, 129, 129);
+    --name: rgb(175, 175, 175);
 }
 
 .lightmode {
@@ -222,6 +223,6 @@ button {
 .footer{
     display: flex;
     justify-content: center;
-    color: rgb(175, 175, 175);
+    color:;
     font: bold;
 }
