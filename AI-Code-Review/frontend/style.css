@@ -219,3 +219,9 @@ button {
 #copy {
     margin: 0;
 }
+.footer{
+    display: flex;
+    justify-content: center;
+    color: rgb(154, 154, 154);
+    font: bold;
+}
