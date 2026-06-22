@@ -3,7 +3,7 @@ from models import CodeInput
 from reviewer import get_review
 from fastapi.middleware.cors import CORSMiddleware
 
-app= FastAPI()
+app=FastAPI()
 
 @app.post("/review")
 async def review(data: CodeInput):
@@ -12,8 +12,6 @@ async def review(data: CodeInput):
 
     return result
    
-
-
 app.add_middleware(
     CORSMiddleware,
     allow_origins=["*"],
