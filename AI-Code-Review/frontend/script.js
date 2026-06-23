@@ -98,7 +98,8 @@ function copycode() {
     }, 2000);
 }
 function clearcode(){
-    document.getElementById("codeInput").innerText="";
+    document.getElementById("codeInput").value="";
+    console.log("click");
 }
 const themeBtn = document.getElementById("themeToggle");
 
