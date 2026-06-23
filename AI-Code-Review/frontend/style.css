@@ -166,6 +166,9 @@ button {
 #copy:hover {
     background-color: var(--buttonclick);
 }
+#clearbtn:hover{
+    background-color: var(--buttonclick);
+}
 
 #loader {
     display: none;
