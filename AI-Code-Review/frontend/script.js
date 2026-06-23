@@ -100,6 +100,7 @@ function copycode() {
 function clearcode(){
     document.getElementById("codeInput").value="";
     document.getElementById("issues").innerText = "";
+    document.getElementById("suggestions").innerText = "";
 }
 const themeBtn = document.getElementById("themeToggle");
 
