@@ -227,3 +227,7 @@ button {
     color:var(--name);
     font: bold;
 }
+#clearbtn{
+    color: var(--w);
+    background-color: var(--b);
+}
