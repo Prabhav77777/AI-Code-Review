@@ -101,6 +101,7 @@ function clearcode(){
     document.getElementById("codeInput").value="";
     document.getElementById("issues").innerText = "";
     document.getElementById("suggestions").innerText = "";
+    document.getElementById("optimizedCode").innerText = "";
 }
 const themeBtn = document.getElementById("themeToggle");
 
