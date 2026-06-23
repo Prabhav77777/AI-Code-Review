@@ -104,7 +104,7 @@ function clearcode(){
     document.getElementById("optimizedCode").innerText = "";
     document.getElementById("codeInput").style.border = "2px solid var(--w)";
     for (let i = 0; i < 3; i++) {
-        document.getElementsByClassName("review-box")[i].style.border = "2px solid white";
+        document.getElementsByClassName("review-box")[i].style.border = "none";
     }
 }
 const themeBtn = document.getElementById("themeToggle");
