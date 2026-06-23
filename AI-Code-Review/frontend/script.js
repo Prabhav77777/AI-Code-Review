@@ -99,7 +99,7 @@ function copycode() {
 }
 function clearcode(){
     document.getElementById("codeInput").value="";
-    document.getElementById("reviewOutput").innerText = "";
+    document.getElementById("issues").innerText = "";
 }
 const themeBtn = document.getElementById("themeToggle");
 
