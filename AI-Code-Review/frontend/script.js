@@ -97,6 +97,9 @@ function copycode() {
 
     }, 2000);
 }
+function clearcode(){
+    document.getElementById("codeInput").innerText="";
+}
 const themeBtn = document.getElementById("themeToggle");
 
 themeBtn.addEventListener("click", () => {
