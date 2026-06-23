@@ -99,7 +99,6 @@ function copycode() {
 }
 function clearcode(){
     document.getElementById("codeInput").value="";
-    console.log("click");
 }
 const themeBtn = document.getElementById("themeToggle");
 
