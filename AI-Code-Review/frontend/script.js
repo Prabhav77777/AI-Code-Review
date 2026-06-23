@@ -99,6 +99,7 @@ function copycode() {
 }
 function clearcode(){
     document.getElementById("codeInput").value="";
+    document.getElementById("reviewOutput").innerText = "";
 }
 const themeBtn = document.getElementById("themeToggle");
 
