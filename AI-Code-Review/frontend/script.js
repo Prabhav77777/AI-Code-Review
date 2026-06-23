@@ -102,7 +102,7 @@ function clearcode(){
     document.getElementById("issues").innerText = "";
     document.getElementById("suggestions").innerText = "";
     document.getElementById("optimizedCode").innerText = "";
-    document.getElementById("codeInput").style.border = "none";
+    document.getElementById("codeInput").style.border = "2px solid var(--w)";
     for (let i = 0; i < 3; i++) {
         document.getElementsByClassName("review-box")[i].style.border = "2px solid white";
     }
