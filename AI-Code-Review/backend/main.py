@@ -11,8 +11,6 @@ async def review(data: CodeInput):
     result = get_review(data.code)
 
     return result
-   
-   
 app.add_middleware(
     CORSMiddleware,
     allow_origins=["*"],
