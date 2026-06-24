@@ -243,3 +243,6 @@ button {
     color: var(--w);
     background-color: var(--b);
 }
+#redmode{
+    background-color: red;
+}
