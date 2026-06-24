@@ -12,6 +12,7 @@
     --bl: #150c28;
     --buttonclick: rgb(129, 129, 129);
     --name: rgb(175, 175, 175);
+    --r: rgb(92, 0, 0);
 }
 
 .lightmode {
@@ -22,6 +23,7 @@
     --bl: #66a9cf;
     --buttonclick: rgb(129, 129, 129);
     --name: rgb(45, 45, 45);
+    --r: rgb(255, 73, 73);
 }
 .red{
         --color: rgb(0, 99, 127);
@@ -244,7 +246,7 @@ button {
     background-color: var(--b);
 }
 #redmode{
-    background-color: rgb(92, 0, 0);
-    color: white;
-    border: 1px solid white;
+    background-color: var(--r);
+    color: var(--w);
+    border: 1px solid var(--w);
 }
