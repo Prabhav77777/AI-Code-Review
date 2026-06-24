@@ -244,5 +244,5 @@ button {
     background-color: var(--b);
 }
 #redmode{
-    background-color: red;
+    background-color: rgb(37, 19, 19);
 }
