@@ -97,8 +97,8 @@ function copycode() {
 
     }, 2000);
 }
-function clearcode(){
-    document.getElementById("codeInput").value="";
+function clearcode() {
+    document.getElementById("codeInput").value = "";
     document.getElementById("issues").innerText = "";
     document.getElementById("suggestions").innerText = "";
     document.getElementById("optimizedCode").innerText = "";
@@ -107,7 +107,7 @@ function clearcode(){
         document.getElementsByClassName("review-box")[i].style.border = "none";
     }
 }
-function redmode(){
+function redmode() {
     document.body.className = "red";
 }
 const themeBtn = document.getElementById("themeToggle");
