@@ -28,8 +28,8 @@
 .red{
         --color: rgb(255, 255, 255);
     --bg: linear-gradient(to right, rgb(0, 0, 0), rgb(139, 0, 0), rgb(0, 0, 0));
-    --w: rgb(0, 0, 0);
-    --b: rgb(235, 246, 247);
+    --w: rgb(255, 255, 255);
+    --b: rgb(0, 0, 0);
     --bl: #ff3c3c;
     --buttonclick: rgb(129, 129, 129);
     --name: rgb(45, 45, 45);
