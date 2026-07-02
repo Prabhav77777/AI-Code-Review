@@ -4,7 +4,7 @@
     box-sizing: border-box;
 }
 
-:root {
+.dark{
     --color: rgb(222, 237, 249);
     --bg: linear-gradient(to right, black, rgb(25, 25, 47), black);
     --w: white;
@@ -26,11 +26,11 @@
     --r: rgb(255, 73, 73);
 }
 .red{
-        --color: rgb(0, 99, 127);
-    --bg: linear-gradient(to right, rgb(198, 240, 255), rgb(138, 150, 228), rgb(198, 240, 255));
+        --color: rgb(255, 255, 255);
+    --bg: linear-gradient(to right, rgb(0, 0, 0), rgb(215, 0, 0), rgb(0, 0, 0));
     --w: rgb(0, 0, 0);
     --b: rgb(235, 246, 247);
-    --bl: #66a9cf;
+    --bl: #ff3c3c;
     --buttonclick: rgb(129, 129, 129);
     --name: rgb(45, 45, 45);
 }
