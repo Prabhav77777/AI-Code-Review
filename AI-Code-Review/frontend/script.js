@@ -107,10 +107,18 @@ function clearcode(){
         document.getElementsByClassName("review-box")[i].style.border = "none";
     }
 }
+function redmode(){
+    document.body.className = "red";
+}
 const themeBtn = document.getElementById("themeToggle");
 
 themeBtn.addEventListener("click", () => {
-    document.body.classList.toggle("lightmode");
+    if (document.body.classList.contains("lightmode")) {
+        document.body.className = "dark";
+    }
+    else {
+        document.body.className = "lightmode";
+    }
 
     if (document.body.classList.contains("lightmode")) {
         themeBtn.textContent = "Dark Mode🌙";
