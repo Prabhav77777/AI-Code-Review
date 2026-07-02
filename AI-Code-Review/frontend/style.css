@@ -4,7 +4,7 @@
     box-sizing: border-box;
 }
 
-.dark{
+.dark {
     --color: rgb(222, 237, 249);
     --bg: linear-gradient(to right, black, rgb(25, 25, 47), black);
     --w: white;
@@ -25,8 +25,9 @@
     --name: rgb(45, 45, 45);
     --r: rgb(255, 73, 73);
 }
-.red{
-        --color: rgb(255, 255, 255);
+
+.red {
+    --color: rgb(255, 255, 255);
     --bg: linear-gradient(to right, rgb(0, 0, 0), rgb(139, 0, 0), rgb(0, 0, 0));
     --w: rgb(255, 255, 255);
     --b: rgb(0, 0, 0);
@@ -177,7 +178,8 @@ button {
 #copy:hover {
     background-color: var(--buttonclick);
 }
-#clearbtn:hover{
+
+#clearbtn:hover {
     background-color: var(--buttonclick);
 }
 
@@ -235,17 +237,20 @@ button {
 #copy {
     margin: 0;
 }
-.footer{
+
+.footer {
     display: flex;
     justify-content: center;
-    color:var(--name);
+    color: var(--name);
     font: bold;
 }
-#clearbtn{
+
+#clearbtn {
     color: var(--w);
     background-color: var(--b);
 }
-#redmode{
+
+#redmode {
     background-color: var(--r);
     color: var(--w);
     border: 1px solid var(--w);
