@@ -266,7 +266,7 @@ button {
     width:55px;
     height:55px;
     border:6px solid #ddd;
-    border-top:6px solid #4F46E5;
+    border-top:6px solid var(--bl);
     border-radius:50%;
     animation:spin 1s linear infinite;
 }
