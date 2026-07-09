@@ -127,9 +127,3 @@ themeBtn.addEventListener("click", () => {
         themeBtn.textContent = "Light Mode☀️";
     }
 });
-const form = document.querySelector("form");
-const loading = document.getElementById("loading");
-
-form.addEventListener("submit", function () {
-    loading.style.display = "flex";
-});
