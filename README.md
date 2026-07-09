@@ -8,7 +8,8 @@
 [![FastAPI](https://img.shields.io/badge/Backend-FastAPI-009688?style=for-the-badge&logo=fastapi&logoColor=white)](https://fastapi.tiangolo.com/)
 [![Groq](https://img.shields.io/badge/Powered_by-Groq_API-F55036?style=for-the-badge&logo=lightning&logoColor=white)](https://groq.com/)
 [![Python](https://img.shields.io/badge/Python-3.11+-3776AB?style=for-the-badge&logo=python&logoColor=white)](https://www.python.org/)
-[![Vercel](https://img.shields.io/badge/Deployed_on-Vercel-000000?style=for-the-badge&logo=vercel&logoColor=white)](https://vercel.com/)
+[![Vercel](https://img.shields.io/badge/Frontend-Vercel-000000?style=for-the-badge&logo=vercel&logoColor=white)](https://vercel.com/)
+[![Render](https://img.shields.io/badge/Backend-Render-46E3B7?style=for-the-badge&logo=render&logoColor=white)](https://render.com/)
 [![License](https://img.shields.io/badge/License-MIT-yellow?style=for-the-badge)](#-license)
 
 </div>
@@ -50,6 +51,11 @@ Under the hood, the app sends your code to **Llama 3.3 70B Versatile** via the b
 | ⚡ **Fast Response Times** | Powered by Groq's high-throughput inference engine |
 | 🎨 **Clean & Responsive UI** | Minimal, distraction-free interface that works on any screen |
 | 📋 **Paste-and-Review Workflow** | Zero setup — paste your code and click a single button |
+| 🌗 **Dark / Light Mode Toggle** | One-click theme switch between a dark (default) and light color scheme |
+| 🔴 **Red Mode** | Alternate high-contrast red theme |
+| 📋 **Copy Optimized Code** | One-click copy button with a "Copied" confirmation state |
+| 🧹 **Clear Button** | Instantly resets the code input and all review panels |
+| ⏳ **Animated Loading Spinner** | Visual feedback while the review request is in flight; the Review button is disabled and relabeled "Reviewing..." during the call |
 
 ---
 
@@ -60,7 +66,7 @@ Under the hood, the app sends your code to **Llama 3.3 70B Versatile** via the b
 | Technology | Purpose |
 |---|---|
 | 🌐 HTML5 | Page structure and layout |
-| 🎨 CSS3 | Styling and responsive design |
+| 🎨 CSS3 | Styling, theming (dark/light/red modes), and responsive design |
 | ⚙️ JavaScript | API communication and dynamic UI updates |
 
 ### Backend
@@ -82,8 +88,8 @@ Under the hood, the app sends your code to **Llama 3.3 70B Versatile** via the b
 
 | Technology | Purpose |
 |---|---|
-| ▲ Vercel | Hosting for the frontend |
-| 🐍 Python Backend API | Serves the FastAPI review endpoint |
+| ▲ Vercel | Hosting for the static frontend |
+| 🟣 Render | Hosting for the FastAPI backend (`ai-code-review-zzz1.onrender.com`) |
 | 🔐 python-dotenv | Manages environment variables (e.g., API keys) |
 
 ---
@@ -94,8 +100,8 @@ Under the hood, the app sends your code to **Llama 3.3 70B Versatile** via the b
 ┌──────────────────────┐        HTTPS POST /review        ┌──────────────────────────┐
 │                       │ ────────────────────────────────▶ │                          │
 │   Frontend (Vercel)   │                                    │   FastAPI Backend        │
-│   HTML / CSS / JS     │ ◀──────────────────────────────── │   (main.py)              │
-│                       │     JSON: issues, suggestions,    │                          │
+│   HTML / CSS / JS     │ ◀──────────────────────────────── │   (Render)                │
+│                       │     JSON: issues, suggestions,    │   main.py                 │
 └──────────────────────┘     optimized_code                 └────────────┬─────────────┘
                                                                            │
                                                                            │ Prompt with
@@ -129,6 +135,7 @@ Under the hood, the app sends your code to **Llama 3.3 70B Versatile** via the b
 6. **Response Parsing** — The backend parses the raw text into three distinct sections: a list of issues, a list of suggestions, and the optimized code block.
 7. **JSON Response** — The structured result is returned to the frontend as JSON.
 8. **UI Rendering** — The frontend dynamically renders the issues, suggestions, and optimized code into their respective panels for the user to read.
+9. **UI Feedback** — While the request is in flight, the Review button is disabled and shows "Reviewing...", with an animated spinner. Once results arrive (or the request fails), each review panel gets a highlighted border and the button resets.
 
 If the AI service fails or the response can't be parsed, the backend gracefully falls back to a default response so the UI never breaks.
 
@@ -180,7 +187,7 @@ cd backend
 uvicorn main:app --reload
 ```
 
-The backend will now be running at:  
+The backend will now be running at:
 👉 `http://127.0.0.1:8000`
 
 ### 7️⃣ Open the Frontend
@@ -192,10 +199,10 @@ cd frontend
 python -m http.server 5500
 ```
 
-Then visit:  
+Then visit:
 👉 `http://127.0.0.1:5500`
 
-> ⚠️ **Note:** If running locally, update the API URL in `script.js` from the deployed backend URL to `http://127.0.0.1:8000/review`.
+> ⚠️ **Note:** The frontend's `script.js` points at the deployed Render backend (`https://ai-code-review-zzz1.onrender.com/review`) by default. If running locally, update that URL in `script.js` to `http://127.0.0.1:8000/review`.
 
 ---
 
@@ -251,8 +258,9 @@ Client → POST /review → CodeInput (Pydantic validation)
 
 **Error Handling**
 
-- If the Groq API call fails → returns a fallback message (`"AI service unavailable"`).
-- If the AI response can't be parsed into the expected format → returns the raw response inside `optimized_code` along with a `"Response parsing failed"` notice.
+- If the Groq API call fails → returns a fallback response: `issues: ["AI service unavailable"]`, `suggestions: ["Please try again later"]`, `optimized_code: ["not available right now"]`.
+- If the AI response can't be parsed into the expected format → returns `issues: ["Response parsing failed"]`, `suggestions: ["Try again"]`, `optimized_code: ["not available now please again"]`.
+- ⚠️ Note: in both failure cases, `optimized_code` is returned as a **list**, not a string — the frontend should handle both types.
 
 ---
 
@@ -265,13 +273,13 @@ AI-Code-Review/
 │   ├── __init__.py
 │   ├── main.py            # FastAPI app & /review endpoint
 │   ├── models.py          # Pydantic request models (CodeInput)
-│   ├── reviewer.py         # Groq API integration & response parsing
-│   └── .env                # Environment variables (not committed)
+│   ├── reviewer.py        # Groq API integration & response parsing
+│   └── .env               # Environment variables (not committed)
 │
 ├── frontend/
 │   ├── index.html          # Main UI structure
-│   ├── style.css           # Styling
-│   └── script.js           # API calls & DOM updates
+│   ├── style.css           # Styling & theming (dark/light/red modes)
+│   └── script.js            # API calls & DOM updates
 │
 ├── requirements.txt         # Python dependencies
 ├── .gitignore
@@ -287,7 +295,6 @@ AI-Code-Review/
 <div align="center">
 <img width="1920" height="1080" alt="image" src="https://github.com/user-attachments/assets/d5b5e765-f816-46d2-955d-91f1086d99e7" />
 
-
 `![Home Page](./screenshots/home-page.png)`
 
 </div>
@@ -297,8 +304,6 @@ AI-Code-Review/
 <div align="center">
 
 <img width="1920" height="1080" alt="image" src="https://github.com/user-attachments/assets/288d4567-2dc2-4f3f-be53-df4c45f961da" />
-
-
 
 `![Review Result](./screenshots/review-result.png)`
 
@@ -314,7 +319,6 @@ AI-Code-Review/
 - 📄 **PDF Export** — Download review reports as shareable PDFs
 - 🔗 **GitHub Integration** — Review entire repositories or pull requests directly
 - 🌈 **Syntax Highlighting** — Improve code readability with highlighted syntax in the editor and output
-- 🌗 **Dark / Light Mode** — Theme toggle for better accessibility and user preference
 
 ---
 
@@ -325,7 +329,7 @@ Building this project came with several real-world engineering challenges:
 - **Prompt Engineering for Structured Output** — Getting a free-form LLM to consistently return a parseable format (`ISSUES / SUGGESTIONS / OPTIMIZED_CODE`) required careful prompt design and iteration.
 - **Robust Parsing** — Since LLM outputs aren't always perfectly consistent, the backend needed defensive parsing logic with graceful fallbacks to avoid breaking the UI.
 - **API Reliability** — Handling Groq API errors gracefully (timeouts, rate limits, unavailability) without crashing the request flow.
-- **Frontend-Backend Decoupling** — Designing a clean separation between a static frontend (Vercel) and a separately deployed Python API.
+- **Frontend-Backend Decoupling** — Designing a clean separation between a static frontend (Vercel) and a separately deployed Python API (Render).
 - **CORS Configuration** — Properly configuring CORS middleware in FastAPI to allow secure cross-origin requests from the deployed frontend.
 
 These challenges reinforced practical skills in **API integration, prompt engineering, error handling, and full-stack deployment**.
@@ -370,7 +374,7 @@ Please make sure to update tests and documentation as appropriate.
 
 ## 📜 License
 
-This project is licensed under the **MIT License**.  
+This project is licensed under the **MIT License**.
 Feel free to use, modify, and distribute it as you see fit. See the [LICENSE](LICENSE) file for details.
 
 ---
@@ -391,7 +395,7 @@ Have questions, feedback, or ideas? Feel free to reach out!
 
 ### **Prabhav Agrawal**
 
-🎓 B.Tech, Computer Science & Applied Mathematics (CSAM)  
+🎓 B.Tech, Computer Science & Applied Mathematics (CSAM)
 🏛️ Indraprastha Institute of Information Technology, Delhi (IIIT Delhi)
 
 *Passionate about building AI-powered tools that make developers' lives easier.*
