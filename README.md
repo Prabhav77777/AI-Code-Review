@@ -308,8 +308,6 @@ RED MODE
 
 <img width="1920" height="1080" alt="image" src="https://github.com/user-attachments/assets/288d4567-2dc2-4f3f-be53-df4c45f961da" />
 
-`![Review Result](./screenshots/review-result.png)`
-
 </div>
 
 ---
