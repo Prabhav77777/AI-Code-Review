@@ -8,6 +8,7 @@ async function reviewCode() {
     }
 
     document.getElementById("loader").style.display = "block";
+    
 
     try {
 
@@ -69,6 +70,7 @@ async function reviewCode() {
     for (let i = 0; i < 3; i++) {
         document.getElementsByClassName("review-box")[i].style.border = "2px solid var(--w)";
     }
+}
 
 
 function updateList(id, items) {
