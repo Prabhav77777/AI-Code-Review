@@ -8,7 +8,9 @@ async function reviewCode() {
     }
 
     document.getElementById("loader").style.display = "block";
-    
+        document.getElementById("loading").style.display = "flex";
+document.getElementById("review").disabled = true;
+
 
     try {
 
