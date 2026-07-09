@@ -7,6 +7,7 @@ async function reviewCode() {
         return;
     }
 
+    
     // Show loading animation
     const loading = document.getElementById("loading");
     const reviewBtn = document.getElementById("review");
