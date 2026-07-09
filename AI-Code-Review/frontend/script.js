@@ -111,5 +111,17 @@ function clearcode() {
 function redmode() {
     document.body.className = "red";
 }
+const themeBtn = document.getElementById("themeToggle");
 
+themeBtn.addEventListener("click", () => {
+
+    if (document.body.classList.contains("lightmode")) {
+        document.body.className = "dark";
+        themeBtn.textContent = "☀️ Light Mode";
+    } else {
+        document.body.className = "lightmode";
+        themeBtn.textContent = "🌙 Dark Mode";
+    }
+
+});
 
