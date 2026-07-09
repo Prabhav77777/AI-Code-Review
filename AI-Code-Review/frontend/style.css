@@ -270,3 +270,8 @@ button {
     border-radius:50%;
     animation:spin 1s linear infinite;
 }
+.loading-container p{
+    margin-top:15px;
+    color:#666;
+    font-size:16px;
+}
