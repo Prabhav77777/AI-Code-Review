@@ -7,10 +7,13 @@ async function reviewCode() {
         return;
     }
 
-    document.getElementById("loader").style.display = "block";
-        document.getElementById("loading").style.display = "flex";
-document.getElementById("review").disabled = true;
+    // Show loading animation
+    const loading = document.getElementById("loading");
+    const reviewBtn = document.getElementById("review");
 
+    loading.style.display = "flex";
+    reviewBtn.disabled = true;
+    reviewBtn.innerText = "Reviewing...";
 
     try {
 
@@ -35,45 +38,35 @@ document.getElementById("review").disabled = true;
 
         console.log("API Response:", data);
 
-        updateList(
-            "issues",
-            data.issues || []
-        );
-
-        updateList(
-            "suggestions",
-            data.suggestions || []
-        );
+        updateList("issues", data.issues || []);
+        updateList("suggestions", data.suggestions || []);
 
         document.getElementById("optimizedCode").innerText =
             data.optimized_code || "";
 
-    }
-    catch (error) {
+    } catch (error) {
 
         console.error(error);
 
-        updateList(
-            "issues",
-            ["Failed to get review"]
-        );
+        updateList("issues", ["Failed to get review"]);
+        updateList("suggestions", []);
+        document.getElementById("optimizedCode").innerText = "";
 
-        updateList(
-            "suggestions",
-            []
-        );
+    } finally {
 
-        document.getElementById("optimizedCode").innerText =
-            "";
-    }
+        // Hide loading animation
+        loading.style.display = "none";
+        reviewBtn.disabled = false;
+        reviewBtn.innerText = "Review Code";
 
-    document.getElementById("loader").style.display = "none";
-    document.getElementById("codeInput").style.border = "none";
-    for (let i = 0; i < 3; i++) {
-        document.getElementsByClassName("review-box")[i].style.border = "2px solid var(--w)";
+        document.getElementById("codeInput").style.border = "none";
+
+        const boxes = document.getElementsByClassName("review-box");
+        for (let i = 0; i < boxes.length; i++) {
+            boxes[i].style.border = "2px solid var(--w)";
+        }
     }
 }
-
 
 function updateList(id, items) {
 
@@ -84,50 +77,20 @@ function updateList(id, items) {
         return;
     }
 
-    list.innerHTML = items
-        .map(item => `<li>${item}</li>`)
-        .join("");
+    list.innerHTML = items.map(item => `<li>${item}</li>`).join("");
 }
+
 function copycode() {
+
     const code = document.getElementById("optimizedCode").innerText;
 
     navigator.clipboard.writeText(code);
 
     const btn = document.getElementById("copy");
-    btn.textContent = "copied";
+    btn.textContent = "Copied";
 
-    setTimeout(function () {
-        btn.textContent = "copy";
-
+    setTimeout(() => {
+        btn.textContent = "Copy";
     }, 2000);
 }
-function clearcode() {
-    document.getElementById("codeInput").value = "";
-    document.getElementById("issues").innerText = "";
-    document.getElementById("suggestions").innerText = "";
-    document.getElementById("optimizedCode").innerText = "";
-    document.getElementById("codeInput").style.border = "2px solid var(--w)";
-    for (let i = 0; i < 3; i++) {
-        document.getElementsByClassName("review-box")[i].style.border = "none";
-    }
-}
-function redmode() {
-    document.body.className = "red";
-}
-const themeBtn = document.getElementById("themeToggle");
 
-themeBtn.addEventListener("click", () => {
-    if (document.body.classList.contains("lightmode")) {
-        document.body.className = "dark";
-    }
-    else {
-        document.body.className = "lightmode";
-    }
-
-    if (document.body.classList.contains("lightmode")) {
-        themeBtn.textContent = "Dark Mode🌙";
-    }
-    else {
-        themeBtn.textContent = "Light Mode☀️";
-    }
-});
