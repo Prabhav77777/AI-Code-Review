@@ -262,3 +262,11 @@ button {
     justify-content: center;
     margin-top: 25px;
 }
+.spinner{
+    width:55px;
+    height:55px;
+    border:6px solid #ddd;
+    border-top:6px solid #4F46E5;
+    border-radius:50%;
+    animation:spin 1s linear infinite;
+}
