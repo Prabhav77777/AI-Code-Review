@@ -295,6 +295,8 @@ AI-Code-Review/
 <div align="center">
 <img width="1920" height="1080" alt="image" src="https://github.com/user-attachments/assets/d5b5e765-f816-46d2-955d-91f1086d99e7" />
 <img width="1920" height="1080" alt="image" src="https://github.com/user-attachments/assets/7beaf420-b419-4324-a76a-055c367526dc" />
+<img width="1920" height="1080" alt="image" src="https://github.com/user-attachments/assets/0095ad10-3d12-4017-a5af-3a84d4c3d0ad" />
+
 
 
 `![Home Page](./screenshots/home-page.png)`
