@@ -69,9 +69,7 @@ async function reviewCode() {
     for (let i = 0; i < 3; i++) {
         document.getElementsByClassName("review-box")[i].style.border = "2px solid var(--w)";
     }
-    document.getElementById("loading").style.display = "flex";
-document.getElementById("review").disabled = true;
-}
+
 
 function updateList(id, items) {
 
