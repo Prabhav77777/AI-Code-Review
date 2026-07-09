@@ -297,10 +297,6 @@ AI-Code-Review/
 <img width="1920" height="1080" alt="image" src="https://github.com/user-attachments/assets/7beaf420-b419-4324-a76a-055c367526dc" />
 <img width="1920" height="1080" alt="image" src="https://github.com/user-attachments/assets/0095ad10-3d12-4017-a5af-3a84d4c3d0ad" />
 
-
-
-`![Home Page](./screenshots/home-page.png)`
-
 </div>
 
 ### 📊 Review Result
