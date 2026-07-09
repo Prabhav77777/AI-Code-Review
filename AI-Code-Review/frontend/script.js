@@ -93,4 +93,23 @@ function copycode() {
         btn.textContent = "Copy";
     }, 2000);
 }
+function clearcode() {
+
+    document.getElementById("codeInput").value = "";
+    document.getElementById("issues").innerHTML = "";
+    document.getElementById("suggestions").innerHTML = "";
+    document.getElementById("optimizedCode").innerText = "";
+
+    document.getElementById("codeInput").style.border = "2px solid var(--w)";
+
+    const boxes = document.getElementsByClassName("review-box");
+    for (let i = 0; i < boxes.length; i++) {
+        boxes[i].style.border = "none";
+    }
+}
+
+function redmode() {
+    document.body.className = "red";
+}
+
 
