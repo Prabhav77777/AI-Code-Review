@@ -6,6 +6,7 @@ from fastapi.middleware.cors import CORSMiddleware
 app=FastAPI()
 
 @app.post("/review")
+
 async def review(data: CodeInput):
 
     result = get_review(data.code)
