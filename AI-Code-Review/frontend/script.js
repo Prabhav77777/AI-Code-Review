@@ -46,6 +46,8 @@ async function reviewCode() {
 
     } catch (error) {
 
+
+
         console.error(error);
 
         updateList("issues", ["Failed to get review"]);
