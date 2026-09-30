@@ -11,7 +11,6 @@ async function reviewCode() {
     // Show loading animation
     const loading = document.getElementById("loading");
     const reviewBtn = document.getElementById("review");
-
     loading.style.display = "flex";
     reviewBtn.disabled = true;
     reviewBtn.innerText = "Reviewing...";
