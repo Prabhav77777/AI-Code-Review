@@ -6,7 +6,6 @@ async function reviewCode() {
         alert("Please enter some code.");
         return;
     }
-
     
     // Show loading animation
     const loading = document.getElementById("loading");
